@@ -16,23 +16,27 @@ Description:
 
 
 class Bicycle:
-    model_name = model
-    weight = weight
-    cost_to_produce = cost_to_produce
+    def __init__(self, model, weight, cost_to_produce):
+
+        self.model_name = model
+        self.weight = weight
+        self.cost_to_produce = cost_to_produce
 
 
 class Bike_Shops:
-    Shop_Name = shop
-    diff_bike =  bike
-    sell_margin = margin
-    profit = Bicycle.cost_to_produce * ( 1 + sell_margin )
+    def __init__(self, shop_name, diff_bike, sell_margin):
+        self.Shop_Name = shop_name
+        self.diff_bike =  diff_bike
+        self.sell_margin = sell_margin
+        self.profit = Bicycle.cost_to_produce * ( 1 + sell_margin )
 
 
 class Customers():
-    cust_name = name
-    to_spend = allowance
-    if to_spend >= Bike_Shops.profit:
-        can_buy == True
-    else:
-        can_buy == False
+    def __init__(self, cust_name, allowance):
+        self.cust_name = cust_name
+        self.to_spend = allowance
+        if self.to_spend >= Bike_Shops.profit:
+            can_buy = True
+        else:
+             can_buy = False
 
