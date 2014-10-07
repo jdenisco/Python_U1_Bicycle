@@ -1,0 +1,7 @@
+#VirtualEnv
+bin/
+lib/
+lib64
+include/
+# VI swap files
+*.swp
