@@ -25,7 +25,7 @@ class Bike_Shops:
     Shop_Name = shop
     diff_bike =  bike
     sell_margin = margin
-    profit = Bicycle.cost_to_produce * sell_margin
+    profit = Bicycle.cost_to_produce * ( 1 + sell_margin )
 
 
 class Customers():
