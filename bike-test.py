@@ -16,13 +16,12 @@ Description:
 
 import bike_class
 
-bike1 = bike_class.Bicycle
+bike1 = bike_class.Bicycle('Huffy', '10LB', '200')
     
 
 
-bike1.model = 'Huffy' 
-bike1.cost_to_produce = 200
 
 
-print (bike1.model)
+print (bike1.model_name)
+print (bike1.weight)
 print (bike1.cost_to_produce)
