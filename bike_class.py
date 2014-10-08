@@ -16,28 +16,42 @@ Description:
 
 
 class Bicycle(object):
-    def __init__(self, model, weight, cost_to_produce):
 
+    # Info about the Bike
+    def __init__(self, model):
+        """ Class construtor """
         self.model_name = model
-        self.weight = weight
-        self.cost_to_produce = cost_to_produce
+
+    def weight(self, B_weight):
+        self.weight = B_weight
+    
+    def cost_to_produce(self, B_cost_to_produce):
+        self.cost_to_produce = B_cost_to_produce
 
 
-class Bike_Shops():
-    def __init__(self, shop_name, diff_bike, sell_margin):
-        self.Shop_Name = shop_name
-        self.diff_bike =  diff_bike
-        self.sell_margin = sell_margin
-        self.saleprice = Bicycle.cost_to_produce * ( 1 + sell_margin )
+class Bike_Shops(Bicycle):
+
+    # Info about the bike store
+
+    def __init__(self, B_shop_name, B_diff_bike):
+        self.Shop_Name = B_shop_name
+        self.diff_bike =  B_diff_bike
+
+    def saleprice(self, B_margin):
+        self.sell_margin = B_margin
+        percent = self.sell_margin / 100
+
+        saleprice = self.cost_to_produce * ( 1 + percent ) 
+        return saleprice
 
 
-class Customers():
+class Customers(Bike_Shops):
     def __init__(self, cust_name, allowance):
         self.cust_name = cust_name
         self.to_spend = allowance
         
-        if self.to_spend >= Bike_Shops.profit:
+        if self.to_spend >= self.salesprice:
             can_buy = True
         else:
-             can_buy = False
-
+            can_buy = False
+        return can_buy
