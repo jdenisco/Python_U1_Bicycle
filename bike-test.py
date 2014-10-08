@@ -14,14 +14,20 @@
 Description:
 """
 
-import bike_class
+from bike_class import *
 
-bike1 = bike_class.Bicycle('Huffy', '10LB', '200')
+bike1 = Bicycle('Huffy')
+bike1.weight(10)
+bike1.cost_to_produce(450)
+
+mystore = Bike_Shops('Jims Bike Store', 1)
     
+mystore.cost_to_produce(100)
 
 
 
-
-print (bike1.model_name)
-print (bike1.weight)
-print (bike1.cost_to_produce)
+print ('Bike model %s ' % bike1.model_name)
+print ('Bike weight %s ' % bike1.weight)
+print ('Cost to build this bike %s ' % bike1.cost_to_produce)
+print ('Mystore cost to make %s ' % mystore.cost_to_produce)
+print ('Mystore saleprice %s ' % mystore.saleprice(20))

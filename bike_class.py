@@ -39,10 +39,11 @@ class Bike_Shops(Bicycle):
 
     def saleprice(self, B_margin):
         self.sell_margin = B_margin
-        percent = self.sell_margin / 100
-
-        saleprice = self.cost_to_produce * ( 1 + percent ) 
-        return saleprice
+        #percent = float(self.sell_margin) / 100
+        percent = float(self.sell_margin) / 100
+        price = self.cost_to_produce * ( 1 + percent ) 
+        print('Price %s ' % price)
+        return price
 
 
 class Customers(Bike_Shops):
