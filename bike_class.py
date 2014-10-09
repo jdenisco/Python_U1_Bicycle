@@ -14,6 +14,7 @@
 Description:
 """
 
+inventory = []
 
 class Bicycle(object):
 
@@ -41,11 +42,20 @@ class Bike_Shops(Bicycle):
         self.sell_margin = B_margin
         percent = float(self.sell_margin) / 100
         self.price = self.cost_to_produce * (1 + percent)
-        print('Price %s ' % self.price)
         return self.price
 
     def profit(self):
         return self.price - self.cost_to_produce
+
+    def add_bike(self, newbike):
+        inventory.append(newbike) 
+        
+    def sold_bike(self, bike):
+        inventory.remove(bike)
+
+    def list_inventory(self):
+        return inventory
+        
 
 
 class Customers(Bike_Shops):
