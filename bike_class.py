@@ -30,7 +30,7 @@ class Bicycle(object):
         self.cost_to_produce = B_cost_to_produce
 
 
-class Bike_Shops(Bicycle):
+class BikeShops(Bicycle):
 
     # Info about the bike store
 
@@ -58,7 +58,7 @@ class Bike_Shops(Bicycle):
         
 
 
-class Customers(Bike_Shops):
+class Customers(BikeShops):
     def __init__(self, cust_name, allowance):
         self.cust_name = cust_name
         self.to_spend = allowance
