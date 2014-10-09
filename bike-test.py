@@ -22,12 +22,13 @@ bike1.cost_to_produce(450)
 
 mystore = Bike_Shops('Jims Bike Store', 1)
     
-mystore.cost_to_produce(100)
+mystore.cost_to_produce(450)
 
 
 
 print ('Bike model %s ' % bike1.model_name)
-print ('Bike weight %s ' % bike1.weight)
+print ('Bike weight %s lbs' % bike1.weight)
 print ('Cost to build this bike %s ' % bike1.cost_to_produce)
 print ('Mystore cost to make %s ' % mystore.cost_to_produce)
 print ('Mystore saleprice %s ' % mystore.saleprice(20))
+print ('Mystore profit %s ' % mystore.profit())

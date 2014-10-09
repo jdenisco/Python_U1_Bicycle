@@ -24,7 +24,7 @@ class Bicycle(object):
 
     def weight(self, B_weight):
         self.weight = B_weight
-    
+
     def cost_to_produce(self, B_cost_to_produce):
         self.cost_to_produce = B_cost_to_produce
 
@@ -35,22 +35,24 @@ class Bike_Shops(Bicycle):
 
     def __init__(self, B_shop_name, B_diff_bike):
         self.Shop_Name = B_shop_name
-        self.diff_bike =  B_diff_bike
+        self.diff_bike = B_diff_bike
 
     def saleprice(self, B_margin):
         self.sell_margin = B_margin
-        #percent = float(self.sell_margin) / 100
         percent = float(self.sell_margin) / 100
-        price = self.cost_to_produce * ( 1 + percent ) 
-        print('Price %s ' % price)
-        return price
+        self.price = self.cost_to_produce * (1 + percent)
+        print('Price %s ' % self.price)
+        return self.price
+
+    def profit(self):
+        return self.price - self.cost_to_produce
 
 
 class Customers(Bike_Shops):
     def __init__(self, cust_name, allowance):
         self.cust_name = cust_name
         self.to_spend = allowance
-        
+
         if self.to_spend >= self.salesprice:
             can_buy = True
         else:
