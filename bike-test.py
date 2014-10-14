@@ -5,9 +5,9 @@
 #   file: bike-test
 #   date: 2014-10-07
 #   author: jdenisco
-#   email: james.denisco@genesys.com
+#   email: jimd@jdenisco.com
 #
-# Copyright © 2014 jdenisco <james.denisco@genesys.com>
+# Copyright © 2014 jdenisco <jimd@jdenisco.com>
 #
 
 """
