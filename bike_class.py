@@ -13,9 +13,10 @@
 """
 Description:
 """
+import copy
 
-inventory = []
 
+    
 class Bicycle(object):
 
     # Info about the Bike
@@ -29,17 +30,40 @@ class Bicycle(object):
     def cost_to_produce(self, B_cost_to_produce):
         self.cost_to_produce = B_cost_to_produce
 
+class BikeShops(object):
+    
+    def __init__(self, B_shop_name, B_diff_bike, B_margin):
+        self.Shop_Name = B_shop_name
+        self.diff_bike = B_diff_bike
+        self.B_margin = B_margin
+        self.inventory = []
+    
+    def add_bike(self, newbike):
+        self.inventory.append(BikeShopsbike(newbike, self.B_margin)) 
+        
+    def sold_bike(self, bike):
+        self.inventory.remove(bike)
 
-class BikeShops(Bicycle):
+    def list_inventory(self):
+        return copy.copy(self.inventory)
+
+
+class BikeShopsbike(Bicycle):
 
     # Info about the bike store
 
-    def __init__(self, B_shop_name, B_diff_bike):
-        self.Shop_Name = B_shop_name
-        self.diff_bike = B_diff_bike
-
-    def saleprice(self, B_margin):
+    def __init__(self, other, B_margin):
         self.sell_margin = B_margin
+
+    def __new__(cls, other, B_margin):
+        if isinstance(other, Bicycle):
+            other = copy.copy(other)
+            other.__class__ = BikeShopsbike
+            other.sell_margin = B_margin
+            return other
+        return object.__new__(cls)
+
+    def saleprice(self):
         percent = float(self.sell_margin) / 100
         self.price = self.cost_to_produce * (1 + percent)
         return self.price
@@ -47,15 +71,6 @@ class BikeShops(Bicycle):
     def profit(self):
         return self.price - self.cost_to_produce
 
-    def add_bike(self, newbike):
-        inventory.append(newbike) 
-        
-    def sold_bike(self, bike):
-        inventory.remove(bike)
-
-    def list_inventory(self):
-        return inventory
-        
 
 
 class Customers(BikeShops):
@@ -68,3 +83,4 @@ class Customers(BikeShops):
         else:
             can_buy = False
         return can_buy
+
