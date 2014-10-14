@@ -9,7 +9,6 @@
 #
 # Copyright © 2014 jdenisco <james.denisco@genesys.com>
 #
-import copy
 
 """
 Description:
@@ -25,13 +24,13 @@ bike2.weight(13)
 bike2.cost_to_produce(1450)
 
 mystore = B.BikeShops('Jims Bike Store', 1, 20)
-#mystore.cost_to_produce(450)
+# mystore.cost_to_produce(450)
 print ('Bike model %s ' % bike1.model_name)
 print ('Bike weight %s lbs' % bike1.weight)
 print ('Cost to build this bike %s ' % bike1.cost_to_produce)
-#orint ('Mystore cost to make %s ' % mystore.cost_to_produce)
-#print ('Mystore saleprice %s ' % mystore.saleprice(20))
-#print ('Mystore profit %s ' % mystore.profit())
+# print ('Mystore cost to make %s ' % mystore.cost_to_produce)
+# print ('Mystore saleprice %s ' % mystore.saleprice(20))
+# print ('Mystore profit %s ' % mystore.profit())
 print('------------------')
 print('adding bikes to inventory')
 mystore.add_bike(bike1)
@@ -46,7 +45,7 @@ for a in inventory:
 
 print('------------------')
 print('Sold a bike')
-#mystore.sold_bike(bike2)
+# mystore.sold_bike(bike2)
 
 print('------------------')
 

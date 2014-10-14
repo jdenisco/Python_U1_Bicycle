@@ -16,7 +16,6 @@ Description:
 import copy
 
 
-    
 class Bicycle(object):
 
     # Info about the Bike
@@ -30,17 +29,18 @@ class Bicycle(object):
     def cost_to_produce(self, B_cost_to_produce):
         self.cost_to_produce = B_cost_to_produce
 
+
 class BikeShops(object):
-    
+
     def __init__(self, B_shop_name, B_diff_bike, B_margin):
         self.Shop_Name = B_shop_name
         self.diff_bike = B_diff_bike
         self.B_margin = B_margin
         self.inventory = []
-    
+
     def add_bike(self, newbike):
-        self.inventory.append(BikeShopsbike(newbike, self.B_margin)) 
-        
+        self.inventory.append(BikeShopsbike(newbike, self.B_margin))
+
     def sold_bike(self, bike):
         self.inventory.remove(bike)
 
@@ -72,8 +72,8 @@ class BikeShopsbike(Bicycle):
         return self.price - self.cost_to_produce
 
 
-
 class Customers(BikeShops):
+
     def __init__(self, cust_name, allowance):
         self.cust_name = cust_name
         self.to_spend = allowance
@@ -83,4 +83,3 @@ class Customers(BikeShops):
         else:
             can_buy = False
         return can_buy
-
