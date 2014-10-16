@@ -19,9 +19,10 @@ import copy
 class Bicycle(object):
 
     # Info about the Bike
-    def __init__(self, model):
+    def __init__(self, model, model_number):
         """ Class construtor """
         self.model_name = model
+        self.model_number = model_number
 
     def weight(self, B_weight):
         self.weight = B_weight
@@ -32,9 +33,8 @@ class Bicycle(object):
 
 class BikeShops(object):
 
-    def __init__(self, B_shop_name, B_diff_bike, B_margin):
+    def __init__(self, B_shop_name, B_margin):
         self.Shop_Name = B_shop_name
-        self.diff_bike = B_diff_bike
         self.B_margin = B_margin
         self.inventory = []
 
@@ -76,10 +76,15 @@ class Customers(BikeShops):
 
     def __init__(self, cust_name, allowance):
         self.cust_name = cust_name
-        self.to_spend = allowance
+        self.allowance = allowance
+        self.cust_list = []
 
-        if self.to_spend >= self.salesprice:
-            can_buy = True
-        else:
-            can_buy = False
-        return can_buy
+
+        self.cust_list.append(self.cust_name)
+
+#        if self.to_spend >= self.salesprice:
+#            can_buy = True
+#        else:
+#            can_buy = False
+#        return copy.copy(self.cust_list), can_buy
+        return 
