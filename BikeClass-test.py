@@ -74,6 +74,7 @@ print("")
 customer = [jim, lori, nicole]
 customer_couldbuy = dict()
 a = []
+totalprofit = 0
 for cust in customer:
     customer_couldbuy[cust.cust_name] = {}
 #    for bike in mystore.list_inventory():
@@ -93,6 +94,12 @@ for cust in customer:
                 print('%s is going to buy the %s model number %s.' % (cust.cust_name, i.model_name, i.model_number))
                 print("")
                 inventory.remove(i)
+                saleprofit = bike.saleprice() - i.cost_to_produce
+                totalprofit = totalprofit + saleprofit
+                print('Profit for this sale = %d' % saleprofit)
+                print('Total profit  = %d' % totalprofit)
+
+
     a = []
 
 print('Model name \tModel number')
