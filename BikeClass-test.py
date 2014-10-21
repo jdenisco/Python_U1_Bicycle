@@ -79,9 +79,9 @@ print("")
 # left over in their bicycle fund.
 customer = [jim, lori, nicole]
 customer_couldbuy = dict()
-a = []
 totalprofit = 0
 for cust in customer:
+    a = []
     customer_couldbuy[cust.cust_name] = {}
 #    for bike in mystore.list_inventory():
     print('%s can afford to buy the following bikes.' % cust.cust_name)
@@ -89,11 +89,11 @@ for cust in customer:
         if int(cust.allowance) >= int(bike.saleprice()):
             print ('%s model number %s' % (bike.model_name, bike.model_number))
             a.append(bike.model_number)
-    customer_couldbuy[cust.cust_name] = a
-    if not customer_couldbuy[cust.cust_name]:
+    if len(a) ==  0:
         print('All bikes you can afford %s have been sold. Sorry, please check back later' % cust.cust_name)
         print("")
     else:
+        customer_couldbuy[cust.cust_name] = a
         ran_pick = random.choice(customer_couldbuy[cust.cust_name])
         for i in inventory:
             if i.model_number == ran_pick:
@@ -106,11 +106,12 @@ for cust in customer:
                 print('Profit for this sale = %d' % saleprofit)
                 print('Total profit  = %d\n' % totalprofit)
 
-    a = []
 
 print('\nThis is what we have left in inventory:')
 print('Model name \tModel number')
-for a in inventory:
-    print a.model_name.ljust(20), a.model_number
+for b in inventory:
+    print b.model_name.ljust(20), b.model_number
 
 print('------------------')
+
+
